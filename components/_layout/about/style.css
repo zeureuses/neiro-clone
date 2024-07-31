@@ -51,10 +51,9 @@
 
 .what__title span {
   color: #fff;
-  /* font-family: "IsamiRi Display Regular"; */
   padding-right: 15%;
   transform: translateY(-10%);
-  white-space: nowrap; /* Changed from text-wrap to white-space */
+  white-space: nowrap;
 }
 
 .what__title i {
@@ -82,10 +81,23 @@
 
 .what__text p {
   color: #000;
-  /* font-family: Kanit; */
   font-weight: 500;
-  line-height: 140%;
+  line-height: 1.4;
   font-size: 1.5rem;
+}
+
+.what__title i::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+  width: 100%;
+  aspect-ratio: 198 / 213;
+  background-image: url(../../../public/about/about_decor1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 @media (min-width: 93.125em) {
@@ -95,5 +107,100 @@
 
   .what__text {
     padding: 5rem 2.5rem 6.25rem;
+  }
+}
+
+@media (min-width: 20em) and (max-width: 93.125em) {
+  @supports (
+    padding-top: clamp(2.5rem, 1.8162393162rem + 3.4188034188vw, 5rem)
+  ) {
+    .page__what {
+      padding-top: clamp(2.5rem, 1.8162393162rem + 3.4188034188vw, 5rem);
+    }
+  }
+}
+
+@media (max-width: 61.99875em) {
+  .what__row:nth-child(1) {
+    grid-template-columns: 1fr;
+  }
+
+  .what__video {
+    width: 100%;
+    max-width: 32.5rem;
+    margin: 0 auto;
+    margin-bottom: 1.875rem;
+    aspect-ratio: 793 / 695;
+  }
+
+  .what__content {
+    max-width: none;
+  }
+}
+
+@media (max-width: 61.99875em) and (min-width: 20em) {
+  @supports (
+    margin-top: clamp(-3.75rem, -3.9209401709rem + 0.8547008547vw, -3.125rem)
+  ) {
+    .what__content {
+      margin-top: clamp(-3.75rem, -3.9209401709rem + 0.8547008547vw, -3.125rem);
+    }
+  }
+}
+
+@media (max-width: 29.99875em) {
+  .what__body {
+    margin: 0 -0.9375rem;
+  }
+
+  .what__title {
+    padding: 0.9375rem 0.9375rem;
+  }
+
+  .what__title span {
+    transform: translateY(0);
+    padding-right: 5%;
+  }
+}
+
+@media (min-width: 20em) and (max-width: 61.99875em) {
+  @supports (font-size: clamp(1rem, 0.7618976755rem + 1.1905116224vw, 1.5rem)) {
+    .what__text p {
+      font-size: clamp(1rem, 0.7618976755rem + 1.1905116224vw, 1.5rem);
+    }
+  }
+}
+
+@media (min-width: 20em) and (max-width: 93.125em) {
+  @supports (
+    padding-right: clamp(0.9375rem, 0.5101495726rem + 2.1367521368vw, 2.5rem)
+  ) {
+    .what__text {
+      padding-right: clamp(0.9375rem, 0.5101495726rem + 2.1367521368vw, 2.5rem);
+    }
+  }
+
+  @supports (
+    padding-left: clamp(0.9375rem, 0.5101495726rem + 2.1367521368vw, 2.5rem)
+  ) {
+    .what__text {
+      padding-left: clamp(0.9375rem, 0.5101495726rem + 2.1367521368vw, 2.5rem);
+    }
+  }
+
+  @supports (
+    padding-bottom: clamp(2.5rem, 1.4743589744rem + 5.1282051282vw, 6.25rem)
+  ) {
+    .what__text {
+      padding-bottom: clamp(2.5rem, 1.4743589744rem + 5.1282051282vw, 6.25rem);
+    }
+  }
+
+  @supports (
+    padding-top: clamp(3.75rem, 3.4081196581rem + 1.7094017094vw, 5rem)
+  ) {
+    .what__text {
+      padding-top: clamp(3.75rem, 3.4081196581rem + 1.7094017094vw, 5rem);
+    }
   }
 }

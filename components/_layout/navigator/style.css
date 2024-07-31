@@ -9,7 +9,12 @@
   transform-origin: right;
   border-top: 0.5rem solid #000;
   border-bottom: 1rem solid #000;
-  background: linear-gradient(270deg, #0b2873 0, #225df5 46.25%, #0d2d7f 99.2%);
+  background: linear-gradient(
+    270deg,
+    #0b2873 0%,
+    #225df5 46.25%,
+    #0d2d7f 99.2%
+  );
 }
 
 .how__title {
@@ -26,7 +31,6 @@
   display: inline-block;
   color: #fff;
   text-shadow: 0 0.0678em 0 #000;
-  /* font-family: "IsamiRi Display"; */
   font-style: normal;
   font-weight: 500;
   line-height: 0.8;
@@ -105,7 +109,6 @@
 
 .item-how__number span {
   color: #000;
-  /* font-family: Kanit; */
   font-style: normal;
   font-weight: 600;
 }
@@ -118,7 +121,6 @@
 
 .item-how__title {
   flex: 1 1 auto;
-  /* font-family: Kanit; */
   font-style: normal;
   font-weight: 600;
   line-height: 1.43;
@@ -141,7 +143,6 @@
 }
 
 .item-how__text {
-  /* font-family: Kanit; */
   font-style: normal;
   font-weight: 500;
   line-height: 1.4;
@@ -202,5 +203,71 @@
     width: 80%;
     height: 100%;
     z-index: 1;
+  }
+}
+
+@media (min-width: 20em) and (max-width: 93.125em) {
+  .how {
+    margin-top: clamp(-6.25rem, 1.7094rem - 8.547vw, 0.0001rem);
+  }
+
+  .page__how {
+    padding-bottom: clamp(2.5rem, 2.1581rem + 1.7094vw, 3.75rem);
+    padding-top: clamp(2.5rem, 1.6453rem + 4.2735vw, 5.625rem);
+  }
+
+  .title-how__container-mini span {
+    font-size: clamp(1.875rem, 0.3707rem + 7.5214vw, 7.375rem);
+    margin-left: 100px;
+  }
+
+  .title-how__container-mini span::after {
+    width: clamp(6.25rem, 3.6175rem + 13.1624vw, 15.875rem);
+  }
+
+  .items-how {
+    padding-top: clamp(2.5rem, 1.1325rem + 6.8376vw, 7.5rem);
+    gap: 3.75rem;
+  }
+
+  .item-how__body {
+    padding: clamp(1.875rem, 1.3622rem + 2.5641vw, 3.75rem)
+      clamp(0.9375rem, 0.5101rem + 2.1368vw, 2.5rem);
+  }
+
+  .item-how__number {
+    height: clamp(3.25rem, 2.3953rem + 4.2735vw, 6.375rem);
+    width: clamp(3.25rem, 2.3953rem + 4.2735vw, 6.375rem);
+  }
+
+  .item-how__number span {
+    font-size: clamp(2.25rem, 1.703rem + 2.735vw, 4.25rem);
+  }
+
+  .item-how__header {
+    margin-bottom: clamp(1.25rem, 1.1645rem + 0.4274vw, 1.5625rem);
+  }
+
+  .item-how__title {
+    font-size: clamp(1.625rem, 1.5224rem + 0.5128vw, 2rem);
+  }
+
+  .item-how__text {
+    font-size: clamp(1.25rem, 1.1645rem + 0.4274vw, 1.5625rem);
+  }
+}
+
+@media (max-width: 47.99875em) {
+  .how {
+    margin-top: 1.25rem;
+  }
+  .items-how__bg {
+    display: none;
+  }
+}
+
+@media (max-width: 61.99875em) {
+  .items-how {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

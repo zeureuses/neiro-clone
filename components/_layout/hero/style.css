@@ -24,6 +24,109 @@
   }
 }
 
+@media (max-width: 47.99875em) {
+  .hero {
+    min-height: 100svh;
+  }
+}
+
+@media (max-width: 61.99875em) {
+  .top-hero__container-mini {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .top-hero__image {
+    max-width: 22.5rem;
+  }
+  .top-hero__image img {
+    max-width: 100%;
+  }
+  .top-hero__buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 29.99875em) {
+  .top-hero__lable {
+    margin-bottom: 1.25rem;
+  }
+  .top-hero__buttons {
+    flex-direction: column;
+    row-gap: 0.9375rem;
+  }
+}
+
+@media (min-width: 20em) and (max-width: 93.125em) {
+  @supports (
+    padding-bottom: clamp(1.25rem, 0.2243589744rem + 5.1282051282vw, 5rem)
+  ) {
+    .top-hero__content {
+      padding-bottom: clamp(1.25rem, 0.2243589744rem + 5.1282051282vw, 5rem);
+    }
+  }
+  @supports (
+    padding-top: clamp(1.25rem, 0.5662393162rem + 3.4188034188vw, 3.75rem)
+  ) {
+    .top-hero__content {
+      padding-top: clamp(1.25rem, 0.5662393162rem + 3.4188034188vw, 3.75rem);
+    }
+  }
+  @supports (
+    font-size: clamp(2.25rem, 1.6346153846rem + 3.0769230769vw, 4.5rem)
+  ) {
+    .top-hero__lable {
+      font-size: clamp(2.25rem, 1.6346153846rem + 3.0769230769vw, 4.5rem);
+    }
+  }
+  @supports (
+    margin-bottom: clamp(1.875rem, 1.6185897436rem + 1.2820512821vw, 2.8125rem)
+  ) {
+    .top-hero__title {
+      margin-bottom: clamp(
+        1.875rem,
+        1.6185897436rem + 1.2820512821vw,
+        2.8125rem
+      );
+    }
+  }
+  @supports (
+    font-size: clamp(4.25rem, 1.8568376068rem + 11.9658119658vw, 13rem)
+  ) {
+    .top-hero__title span {
+      font-size: clamp(4.25rem, 1.8568376068rem + 11.9658119658vw, 13rem);
+    }
+  }
+  @supports (
+    margin-bottom: clamp(2.5rem, 2.4145299145rem + 0.4273504274vw, 2.8125rem)
+  ) {
+    .top-hero__text {
+      margin-bottom: clamp(2.5rem, 2.4145299145rem + 0.4273504274vw, 2.8125rem);
+    }
+  }
+  @supports (
+    font-size: clamp(1.125rem, 1.0908119658rem + 0.1709401709vw, 1.25rem)
+  ) {
+    .top-hero__text {
+      font-size: clamp(1.125rem, 1.0908119658rem + 0.1709401709vw, 1.25rem);
+    }
+  }
+  @supports (
+    padding-top: clamp(6.25rem, 5.5662393162rem + 3.4188034188vw, 8.75rem)
+  ) {
+    .page__hero {
+      padding-top: clamp(6.25rem, 5.5662393162rem + 3.4188034188vw, 8.75rem);
+    }
+  }
+  @supports (
+    font-size: clamp(1.625rem, 1.5053418803rem + 0.5982905983vw, 2.0625rem)
+  ) {
+    .button--big span {
+      font-size: clamp(1.625rem, 1.5053418803rem + 0.5982905983vw, 2.0625rem);
+    }
+  }
+}
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -93,21 +196,12 @@
 
 .top-hero__lable {
   color: #fff;
-  /* font-family: Kanit, sans-serif; */
   font-style: normal;
   font-weight: 700;
-  /* opacity: 0; */
-  /* visibility: hidden; */
 }
-
-/* .loaded .top-hero__lable {
-  animation: opacity 0.45s ease 0.4s forwards;
-} */
 
 .top-hero__title {
   display: inline-block;
-  /* opacity: 0; */
-  /* visibility: hidden; */
 }
 
 .loaded .top-hero__title {
@@ -122,7 +216,6 @@
   display: inline-block;
   position: relative;
   color: #fff;
-  /* font-family: "IsamiRi Display", sans-serif; */
   line-height: 0.8;
   transform-origin: left;
 }
@@ -142,9 +235,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  /* opacity: 0; */
-  /* visibility: hidden; */
-  /* transform: translateY(-6.25rem); */
 }
 
 .loaded .top-hero__text {
@@ -154,10 +244,7 @@
 .top-hero__text {
   max-width: 31.625rem;
   color: #fff;
-  /* font-family: Kanit, sans-serif; */
   line-height: 1.4;
-  /* opacity: 0; */
-  /* visibility: hidden; */
 }
 
 .loaded .top-hero__buttons {
@@ -167,8 +254,6 @@
 .top-hero__buttons {
   display: flex;
   gap: 1.25rem;
-  /* opacity: 0; */
-  /* visibility: hidden; */
 }
 
 .button {
@@ -189,61 +274,32 @@
   gap: 1rem;
 }
 
-.btn-buy {
-  font-size: 2.0625rem;
-  flex-shrink: 0;
-  padding: 0.75rem 1.5rem;
-  border-radius: 1.125rem;
-  border: 0.1875rem solid #000;
-  background-color: #225df5;
-  box-shadow:
-    -7px -7px 4px 0 rgba(0, 0, 0, 0.45) inset,
-    4.505px 4.505px 0 1.502px #000;
-  transition:
-    box-shadow 0.2s ease 0s,
-    -webkit-transform 0.2s ease 0s;
-  transition:
-    box-shadow 0.2s ease 0s,
-    transform 0.2s ease 0s;
-  transition:
-    box-shadow 0.2s ease 0s,
-    transform 0.2s ease 0s,
-    -webkit-transform 0.2s ease 0s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-column-gap: 1rem;
-  -moz-column-gap: 1rem;
-  column-gap: 1rem;
-}
-
+.btn-buy,
 .btn-chart {
   font-size: 2.0625rem;
   flex-shrink: 0;
-  color: black;
   padding: 0.75rem 1.5rem;
   border-radius: 1.125rem;
   border: 0.1875rem solid #000;
-  background-color: white;
   box-shadow:
     -7px -7px 4px 0 rgba(0, 0, 0, 0.45) inset,
     4.505px 4.505px 0 1.502px #000;
   transition:
-    box-shadow 0.2s ease 0s,
-    -webkit-transform 0.2s ease 0s;
-  transition:
-    box-shadow 0.2s ease 0s,
-    transform 0.2s ease 0s;
-  transition:
-    box-shadow 0.2s ease 0s,
-    transform 0.2s ease 0s,
-    -webkit-transform 0.2s ease 0s;
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  -webkit-column-gap: 1rem;
-  -moz-column-gap: 1rem;
   column-gap: 1rem;
+}
+
+.btn-buy {
+  background-color: #225df5;
+}
+
+.btn-chart {
+  color: black;
+  background-color: white;
 }
 
 .bottom-hero {
@@ -251,7 +307,6 @@
   left: -5%;
   width: 110%;
   rotate: -3deg;
-  -webkit-transform-origin: left;
   transform-origin: left;
   border: 0.5rem solid #000;
   background: linear-gradient(270deg, #0b2873 0, #225df5 46.25%, #0d2d7f 99.2%);
@@ -267,8 +322,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  -webkit-column-gap: 0.9375rem;
-  -moz-column-gap: 0.9375rem;
   column-gap: 0.9375rem;
 }
 
@@ -276,11 +329,10 @@
   position: relative;
   z-index: 2;
   color: #fff;
-  /* font-family: Kanit, sans-serif; */
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.4;
-  white-space: nowrap; /* Replaced text-wrap with white-space */
+  white-space: nowrap;
 }
 
 .button--white {
