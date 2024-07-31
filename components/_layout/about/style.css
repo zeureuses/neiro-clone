@@ -1,0 +1,99 @@
+.what__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.what__row:nth-child(1) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.875rem;
+}
+
+.what__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.what__video {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.875rem;
+}
+
+.what__content {
+  position: relative;
+}
+
+.what__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.what__title {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 1.25rem 2.5rem;
+  border-radius: 6.25rem;
+  border: 0.5rem solid #000;
+  background: #225df5;
+  box-shadow:
+    13px -19px 4px rgba(0, 0, 0, 0.24) inset,
+    0 13.974px 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: rotate(-3deg);
+}
+
+.what__title span {
+  color: #fff;
+  /* font-family: "IsamiRi Display Regular"; */
+  padding-right: 15%;
+  transform: translateY(-10%);
+  white-space: nowrap; /* Changed from text-wrap to white-space */
+}
+
+.what__title i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 30%;
+  height: 100%;
+}
+
+.what__text {
+  transform: translateY(-1.875rem);
+  width: 90%;
+  border-radius: 1.875rem;
+  border: 0.3125rem solid #000;
+  background: #fff;
+  box-shadow:
+    -11px -9px 4px rgba(0, 0, 0, 0.25) inset,
+    7.667px 7.667px 0 #000;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.875rem;
+}
+
+.what__text p {
+  color: #000;
+  /* font-family: Kanit; */
+  font-weight: 500;
+  line-height: 140%;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 93.125em) {
+  .what__title span {
+    font-size: 3.6875rem;
+  }
+
+  .what__text {
+    padding: 5rem 2.5rem 6.25rem;
+  }
+}

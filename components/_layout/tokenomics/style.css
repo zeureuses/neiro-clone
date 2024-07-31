@@ -1,0 +1,232 @@
+/* Base Styles */
+.tokenomics {
+  position: relative;
+  z-index: 5;
+}
+
+.title-tokenomics {
+  padding: 0.9375rem 0;
+  position: relative;
+  z-index: 2;
+  left: -5%;
+  width: 110%;
+  transform: rotate(-3deg);
+  transform-origin: left;
+  border-top: 0.5rem solid #000;
+  border-bottom: 1rem solid #000;
+  background: linear-gradient(270deg, #0b2873 0, #225df5 46.25%, #0d2d7f 99.2%);
+}
+
+.title-tokenomics__container-mini {
+  padding: 0 8%;
+}
+
+.title-tokenomics__container-mini span {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-shadow: 0 0.0678em 0 #000;
+  /* font-family: "IsamiRi Display"; */
+  font-style: normal;
+  font-weight: 600;
+  line-height: 0.8;
+}
+
+.tokenomics__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-end;
+}
+
+.item-tokenomics {
+  position: relative;
+  border-radius: 1.875rem;
+  border: 0.125rem solid #000;
+  background: #fff;
+  box-shadow:
+    -10px -11px 4px rgba(0, 0, 0, 0.25) inset,
+    7.667px 7.667px 0 #000;
+}
+
+.item-tokenomics__body {
+  position: relative;
+}
+
+.item-tokenomics__decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+.item-tokenomics__title {
+  max-width: 70%;
+  color: #000;
+  /* font-family: Kanit; */
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.item-tokenomics__items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.375rem;
+}
+
+.item-tokenomics__item {
+  border-radius: 1.25rem;
+  border: 4px solid #000;
+  background: #ecebff;
+  box-shadow: 2px 2px 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1.25rem;
+}
+
+.item-tokenomics__item-name {
+  flex: 1 1 auto;
+  /* font-family: Kanit; */
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.item-tokenomics__item-value {
+  flex-shrink: 1;
+  text-align: right;
+  color: #000;
+  /* font-family: Kanit; */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+.item-tokenomics__item.active {
+  background: #225df5;
+}
+
+/* Pseudo Elements */
+.title-tokenomics::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20%;
+  min-width: 13.75rem;
+  aspect-ratio: 505 / 571;
+  background: url(../../../public/tokenomics/tokenomics_top.png) center /
+    contain no-repeat;
+}
+
+.item-tokenomics::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 35%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(50%, -25%);
+  background-color: #225df5;
+  filter: blur(100px);
+}
+
+.item-tokenomics__decor::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-image: url(../../../public/tokenomics/tokenomics_decor1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.item-tokenomics__decor::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(0.8);
+  border-radius: 50%;
+  background-image: url(../../../public/tokenomics/tokenomics_decor1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* Media Queries */
+@media (min-width: 93.125em) {
+  .tokenomics {
+    margin-top: 16.25rem;
+  }
+
+  .page__tokenomics {
+    padding-bottom: 12.5rem;
+    padding-top: 5rem;
+  }
+
+  .tokenomics__title {
+    margin-bottom: 5rem;
+  }
+
+  .title-tokenomics__container-mini span {
+    font-size: 7.375rem;
+  }
+
+  .tokenomics__items {
+    gap: 7.1875rem;
+  }
+
+  .item-tokenomics {
+    padding: 2rem 2.125rem 2.625rem;
+  }
+
+  .item-tokenomics__title {
+    margin-bottom: 1.75rem;
+    font-size: 3.25rem;
+  }
+
+  .item-tokenomics__item {
+    padding: 2rem;
+  }
+
+  .item-tokenomics__item-name {
+    font-size: 2.25rem;
+  }
+
+  .item-tokenomics__item-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 61.99875em) {
+  .items-tokenomics__bg {
+    display: block;
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    z-index: 1;
+  }
+}
