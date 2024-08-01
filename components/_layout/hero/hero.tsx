@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import "./style.css";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   BackgroundFirstSection,
   Dexscreener,
@@ -12,6 +15,23 @@ import {
 } from "@/helpers/image-import";
 
 const Hero = () => {
+  const fadeInOutVariants = {
+    hidden: { opacity: 0, y: "-6.25rem" },
+    visible: { opacity: 1, y: "0" },
+  };
+  const ease = [0.42, 0, 0.58, 1];
+
+  const slideToRight = {
+    hidden: {
+      x: "100vw",
+      rotate: "1080deg",
+    },
+    visible: {
+      x: 0,
+      rotate: 0,
+    },
+  };
+
   return (
     <section
       data-watch="navigator"
@@ -25,14 +45,35 @@ const Hero = () => {
         <div className="top-hero__container">
           <div className="top-hero__container-mini">
             <div className="top-hero__content">
-              <div className="top-hero__lable">Welcome to</div>
+              <motion.div
+                className="top-hero__lable"
+                initial="hidden"
+                animate="visible"
+                variants={fadeInOutVariants}
+                transition={{ duration: 0.5, ease }}
+              >
+                Welcome to
+              </motion.div>
               <h1 className="top-hero__title">
-                <span>NEIRO</span>
+                <motion.span
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInOutVariants}
+                  transition={{ duration: 0.5, ease, delay: 0.5 }} // Delay to start after label
+                >
+                  NEIRO
+                </motion.span>
               </h1>
-              <div className="top-hero__text">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeInOutVariants}
+                transition={{ duration: 0.5, ease, delay: 1.0 }} // Delay to start after title
+                className="top-hero__text"
+              >
                 The sister of the OG $DOGE, Kabosu, here to make history on the
                 Ethereum chain!
-              </div>
+              </motion.div>
               <div className="top-hero__buttons">
                 <a
                   href="https://app.uniswap.org/swap?outputCurrency=0xee2a03aa6dacf51c18679c516ad5283d8e7c2637"
@@ -70,36 +111,56 @@ const Hero = () => {
         <div className="bottom-hero__container overflow-hidden">
           <div className="bottom-hero__container-mini overflow-hidden">
             <div className="bottom-hero__items overflow-hidden">
-              <a
+              <motion.a
+                initial="hidden"
+                animate="visible"
+                variants={slideToRight}
+                transition={{ duration: 1, delay: 1.0 }}
                 href="https://t.me/neiro_ethereum"
                 className="bottom-hero__item"
               >
                 <Image src={Telegram} alt="Icon" width={100} height={100} />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                initial="hidden"
+                animate="visible"
+                variants={slideToRight}
+                transition={{ duration: 1, delay: 1.0 }}
                 href="https://x.com/neiro_ethereum"
                 className="bottom-hero__item"
               >
                 <Image src={Twitter} alt="Icon" width={100} height={100} />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                initial="hidden"
+                animate="visible"
+                variants={slideToRight}
+                transition={{ duration: 1, delay: 1.0 }}
                 href="https://app.uniswap.org/swap?outputCurrency=0xee2a03aa6dacf51c18679c516ad5283d8e7c2637"
                 className="bottom-hero__item"
               >
                 <Image src={Uniswap} alt="Icon" width={100} height={100} />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                initial="hidden"
+                animate="visible"
+                variants={slideToRight}
+                transition={{ duration: 1, delay: 1.0 }}
                 href="https://www.dextools.io/app/en/ether/pair-explorer/0x3885fbe4cd8aed7b7e9625923927fa1ce30662a3?t=1722287773282"
                 className="bottom-hero__item"
               >
                 <Image src={Dextool} alt="Icon" width={100} height={100} />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                initial="hidden"
+                animate="visible"
+                variants={slideToRight}
+                transition={{ duration: 1, delay: 1.0 }}
                 href="https://dexscreener.com/ethereum/0x3885fbe4cd8aed7b7e9625923927fa1ce30662a3"
                 className="bottom-hero__item"
               >
                 <Image src={Dexscreener} alt="Icon" width={100} height={100} />
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>

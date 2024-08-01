@@ -6,19 +6,57 @@ import Image from "next/image";
 import "./style.css";
 
 const Header = () => {
+  const [navBar, setNavbar] = React.useState<boolean>(false);
+  const [active, setActive] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    const changeBackgroundColor = () => {
+      if (window.scrollY >= 100) {
+        setNavbar(true);
+      } else {
+        setNavbar(false);
+      }
+    };
+    window.addEventListener("scroll", changeBackgroundColor);
+    changeBackgroundColor();
+
+    return () => {
+      window.removeEventListener("scroll", changeBackgroundColor);
+    };
+  }, []);
+
+  const handleActive = () => {
+    setActive(!active);
+  };
+
+  console.log(active);
+
   return (
-    <header className="header loaded">
+    <header className={`header ${navBar ? "bg-[#161215]" : "bg-transparent"} `}>
       <div className="header__container">
-        <div className="header__container-mini">
+        <div className="header__container-mini flex items-center">
           <a href="../" className="header__logo">
             <Image src={HeaderLogo} alt="Logo" width={220} height={73} />
           </a>
           <div className="header__right">
-            <div className="header__menu menu">
-              <button type="button" className="menu__icon icon-menu">
-                <span></span>
-              </button>
-              <nav className="menu__body">
+            <div className="header__menu menu flex items-center">
+              <div
+                className="flex cursor-pointer flex-col items-center justify-center md:hidden"
+                onClick={handleActive}
+              >
+                <span
+                  className={`block h-[2px] w-[20px] border-b-[1px] border-solid ${"border-white"} mb-1 transform transition-transform duration-300 ease-in-out ${active ? "translate-y-[6px] rotate-45" : ""}`}
+                ></span>
+                <span
+                  className={`block h-[2px] w-[20px] border-b-[1px] border-solid ${"border-white"} mb-1 transform transition-transform duration-300 ease-in-out ${active ? "opacity-0" : ""}`}
+                ></span>
+                <span
+                  className={`block h-[2px] w-[20px] border-b-[1px] border-solid ${"border-white"} transform transition-transform duration-300 ease-in-out ${active ? "-translate-y-[6px] -rotate-45" : ""}`}
+                ></span>
+              </div>
+              <nav
+                className={`menu__body ${active ? "absolute inset-0 z-[8999] h-full w-full" : ""}`}
+              >
                 <ul className="menu__list">
                   <li className="menu__item">
                     <a
@@ -72,6 +110,52 @@ const Header = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="absolute z-[9999] h-screen w-full bg-black">
+        <nav className={`menu__body text-white`}>
+          <ul className="menu__list">
+            <li className="menu__item text-white">
+              <a
+                href="#"
+                data-goto=".hero"
+                className="menu__link _navigator-active"
+              >
+                Home
+              </a>
+            </li>
+            <li className="menu__item">
+              <a
+                href="#"
+                data-goto-header=""
+                data-goto=".what"
+                className="menu__link"
+              >
+                About
+              </a>
+            </li>
+            <li className="menu__item">
+              <a
+                href="#"
+                data-goto-header=""
+                data-goto=".how"
+                className="menu__link"
+              >
+                How to buy
+              </a>
+            </li>
+            <li className="menu__item">
+              <a
+                href="#"
+                data-goto-header=""
+                data-goto=".tokenomics"
+                className="menu__link"
+              >
+                Tokenomics
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

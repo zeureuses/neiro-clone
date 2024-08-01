@@ -1,11 +1,43 @@
+"use client";
+
 import React from "react";
 import "./style.css";
+import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import { ThirdSectionPhotos } from "@/helpers/image-import";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
+  const opacity = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+    },
+  };
+
+  const slideFromRight = {
+    hidden: { x: "100px" },
+    visible: { x: 0 },
+  };
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <section
+    <motion.section
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={opacity}
+      transition={{ duration: 0.5 }}
       data-watch="navigator"
       className="page__what what _watcher-view"
       data-watch-threshold="0.67"
@@ -29,8 +61,21 @@ const About = () => {
             </div>
           </div>
           <div className="what__content" data-da=".what__column, 991.98, 1">
-            <i></i>
-            <div className="what__body">
+            <motion.i
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={slideFromRight}
+              transition={{ duration: 0.5 }}
+            ></motion.i>
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={slideFromRight}
+              transition={{ duration: 0.5 }}
+              className="what__body"
+            >
               <h2 className="what__title">
                 <span>About Neiro</span>
                 <i></i>
@@ -46,11 +91,11 @@ const About = () => {
                 </p>
                 <p></p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

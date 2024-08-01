@@ -1,11 +1,39 @@
+"use client";
+
 import React from "react";
 import "./style.css";
 import { how1, how2, how3, how4, HowToBuyBG } from "@/helpers/image-import";
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Navigator = () => {
+  const opacity = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const slideFromRight = {
+    hidden: {
+      x: "-100vw",
+    },
+    visible: {
+      x: 0,
+    },
+  };
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <section
+      ref={ref}
       data-watch="navigator"
       className="page__how how"
       data-watch-threshold="0.24"
@@ -17,7 +45,15 @@ const Navigator = () => {
         className="how__title title-how _watcher-view"
       >
         <div className="title-how__container-mini">
-          <span>How to Buy?</span>
+          <motion.span
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={slideFromRight}
+            transition={{ duration: 0.5 }}
+          >
+            How to Buy?
+          </motion.span>
         </div>
       </div>
       <div className="how__container">
@@ -39,7 +75,14 @@ const Navigator = () => {
             </div>
             <div className="items-how__item item-how">
               <div className="item-how__decor"></div>
-              <div className="item-how__body">
+              <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={opacity}
+                transition={{ duration: 0.5 }}
+                className="item-how__body"
+              >
                 <div className="item-how__number">
                   <span>1</span>
                 </div>
@@ -58,11 +101,18 @@ const Navigator = () => {
                   by transferring Ether (ETH) from an exchange or another wallet
                   to your MetaMask Ethereum address.
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className="items-how__item item-how">
               <div className="item-how__decor"></div>
-              <div className="item-how__body">
+              <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={opacity}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="item-how__body"
+              >
                 <div className="item-how__number">
                   <span>2</span>
                 </div>
@@ -80,11 +130,18 @@ const Navigator = () => {
                   the DEX. This will allow you to trade directly from your
                   MetaMask wallet.
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className="items-how__item item-how">
               <div className="item-how__decor"></div>
-              <div className="item-how__body">
+              <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={opacity}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="item-how__body"
+              >
                 <div className="item-how__number">
                   <span>3</span>
                 </div>
@@ -103,11 +160,18 @@ const Navigator = () => {
                   pop-up window. Make sure to review all details before
                   finalizing the transaction.
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className="items-how__item item-how">
               <div className="item-how__decor"></div>
-              <div className="item-how__body">
+              <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={opacity}
+                transition={{ duration: 0.5, delay: 1.5 }}
+                className="item-how__body"
+              >
                 <div className="item-how__number">
                   <span>4</span>
                 </div>
@@ -126,7 +190,7 @@ const Navigator = () => {
                   should now be visible in your MetaMask wallet, and you can
                   manage, send, or trade them as needed.
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

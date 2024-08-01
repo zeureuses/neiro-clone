@@ -1,9 +1,39 @@
+"use client";
+
 import React from "react";
 import "./style.css";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 
 const Social = () => {
+  const slideFromLeft = {
+    hidden: {
+      x: "-100vw",
+    },
+    visible: {
+      x: 0,
+    },
+  };
+  const slideFromRight = {
+    hidden: {
+      x: "100vw",
+    },
+    visible: {
+      x: 0,
+    },
+  };
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <section className="page__social social">
+    <section ref={ref} className="page__social social">
       <div
         data-watch-threshold="0.8"
         data-watch-once=""
@@ -11,7 +41,14 @@ const Social = () => {
         className="social__title title-social _watcher-view"
       >
         <div className="title-social__container-mini">
-          <span>Join Us</span>
+          <motion.span
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={slideFromLeft}
+          >
+            Join Us
+          </motion.span>
         </div>
       </div>
       <div className="social__container">

@@ -1,9 +1,45 @@
+"use client";
+
 import React from "react";
 import "./style.css";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Tokenomics = () => {
+  const opacity = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const slideFromLeft = {
+    hidden: {
+      x: "-100vw",
+    },
+    visible: {
+      x: 0,
+    },
+  };
+  const slideFromRight = {
+    hidden: {
+      x: "100vw",
+    },
+    visible: {
+      x: 0,
+    },
+  };
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <section
+      ref={ref}
       data-watch="navigator"
       className="page__tokenomics tokenomics"
       data-watch-threshold="0.35"
@@ -15,7 +51,15 @@ const Tokenomics = () => {
         className="tokenomics__title title-tokenomics _watcher-view"
       >
         <div className="title-tokenomics__container-mini">
-          <span>Tokenomics!</span>
+          <motion.span
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={slideFromRight}
+            transition={{ duration: 0.5 }}
+          >
+            Tokenomics!
+          </motion.span>
         </div>
       </div>
       <div className="tokenomics__container">
@@ -26,7 +70,14 @@ const Tokenomics = () => {
             data-watch=""
             className="tokenomics__items"
           >
-            <div className="tokenomics__item item-tokenomics">
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={slideFromRight}
+              transition={{ duration: 0.5 }}
+              className="tokenomics__item item-tokenomics"
+            >
               <div className="item-tokenomics__body">
                 <div className="item-tokenomics__decor">
                   <span></span>
@@ -47,8 +98,15 @@ const Tokenomics = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="tokenomics__item item-tokenomics">
+            </motion.div>
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={slideFromLeft}
+              transition={{ duration: 0.5 }}
+              className="tokenomics__item item-tokenomics"
+            >
               <div className="item-tokenomics__body">
                 <div className="item-tokenomics__decor">
                   <span></span>
@@ -93,7 +151,7 @@ const Tokenomics = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
