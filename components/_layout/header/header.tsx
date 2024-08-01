@@ -90,6 +90,50 @@ const Header: React.FC = () => {
                 >
                   <MenuMobile active={active} handleActive={handleActive} />
                 </motion.div>
+
+                <nav className={`menu__body`}>
+                  <ul className="menu__list">
+                    <li className="menu__item">
+                      <a
+                        href="#"
+                        data-goto=".hero"
+                        className="menu__link _navigator-active"
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li className="menu__item">
+                      <a
+                        href="#"
+                        data-goto-header=""
+                        data-goto=".what"
+                        className="menu__link"
+                      >
+                        About
+                      </a>
+                    </li>
+                    <li className="menu__item">
+                      <a
+                        href="#"
+                        data-goto-header=""
+                        data-goto=".how"
+                        className="menu__link"
+                      >
+                        How to buy
+                      </a>
+                    </li>
+                    <li className="menu__item">
+                      <a
+                        href="#"
+                        data-goto-header=""
+                        data-goto=".tokenomics"
+                        className="menu__link"
+                      >
+                        Tokenomics
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
               <div className="header__buttons" data-da=".menu__body, 991.98">
                 <a
