@@ -111,52 +111,53 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      <div className="absolute z-[9999] h-screen w-full bg-black">
-        <nav className={`menu__body text-white`}>
-          <ul className="menu__list">
-            <li className="menu__item text-white">
-              <a
-                href="#"
-                data-goto=".hero"
-                className="menu__link _navigator-active"
-              >
-                Home
-              </a>
-            </li>
-            <li className="menu__item">
-              <a
-                href="#"
-                data-goto-header=""
-                data-goto=".what"
-                className="menu__link"
-              >
-                About
-              </a>
-            </li>
-            <li className="menu__item">
-              <a
-                href="#"
-                data-goto-header=""
-                data-goto=".how"
-                className="menu__link"
-              >
-                How to buy
-              </a>
-            </li>
-            <li className="menu__item">
-              <a
-                href="#"
-                data-goto-header=""
-                data-goto=".tokenomics"
-                className="menu__link"
-              >
-                Tokenomics
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      {active && (
+        <div className="absolute z-[9999] h-screen w-full bg-black">
+          <nav className={`menu__body text-white`}>
+            <ul className="menu__list">
+              <li className="menu__item text-white">
+                <a
+                  href="#"
+                  data-goto=".hero"
+                  className="menu__link _navigator-active"
+                >
+                  Home
+                </a>
+              </li>
+              <li className="menu__item">
+                <a
+                  href="#"
+                  data-goto-header=""
+                  data-goto=".what"
+                  className="menu__link"
+                >
+                  About
+                </a>
+              </li>
+              <li className="menu__item">
+                <a
+                  href="#"
+                  data-goto-header=""
+                  data-goto=".how"
+                  className="menu__link"
+                >
+                  How to buy
+                </a>
+              </li>
+              <li className="menu__item">
+                <a
+                  href="#"
+                  data-goto-header=""
+                  data-goto=".tokenomics"
+                  className="menu__link"
+                >
+                  Tokenomics
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
