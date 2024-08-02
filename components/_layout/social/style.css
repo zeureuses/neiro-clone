@@ -31,7 +31,7 @@
   transform-origin: right;
   border-top: 0.5rem solid #000;
   border-bottom: 1rem solid #000;
-  background: linear-gradient(270deg, #0b2873 0, #225df5 46.25%, #0d2d7f 99.2%);
+  background: var(--bgGradient);
 }
 
 .title-social__container-mini {
@@ -42,7 +42,7 @@
 .title-social__container-mini span {
   position: relative;
   display: inline-block;
-  color: #fff;
+  color: var(--textWhite);
   text-shadow: 0 0.0677966102em 0 #000;
   -webkit-text-stroke-width: 0.0762711864em;
   -webkit-text-stroke-color: #000;
@@ -71,7 +71,7 @@
 }
 
 .social__text {
-  color: #fff;
+  color: var(--textWhite);
   text-shadow: 0 0.064516129em 0 #000;
   -webkit-text-stroke-width: 0.0725806452em;
   -webkit-text-stroke-color: #000;
@@ -85,10 +85,8 @@
   padding: 0.75rem 1.5rem;
   border-radius: 1.125rem;
   border: 0.1875rem solid #000;
-  background-color: #225df5;
-  box-shadow:
-    -7px -7px 4px 0 rgba(0, 0, 0, 0.45) inset,
-    4.505px 4.505px 0 1.502px #000;
+  background-color: var(--bgBlue);
+  box-shadow: var(--shadow);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -98,7 +96,7 @@
 .button span {
   position: relative;
   z-index: 2;
-  color: #fff;
+  color: var(--textWhite);
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;

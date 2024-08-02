@@ -3,25 +3,34 @@ import React from "react";
 
 const pages = [
   {
+    href: "#",
     name: "Home",
   },
   {
+    href: "#about",
     name: "About",
   },
   {
+    href: "#how-to-buy",
     name: "How to Buy",
   },
   {
+    href: "#tokenomics",
     name: "Tokenomics",
   },
 ];
 
 interface MobileProps {
   active: boolean;
+  setActive: (isActive: boolean) => void;
   handleActive: () => void;
 }
 
-const MenuMobile: React.FC<MobileProps> = ({ active, handleActive }) => {
+const MenuMobile: React.FC<MobileProps> = ({
+  active,
+  setActive,
+  handleActive,
+}) => {
   return (
     <>
       <div
@@ -41,8 +50,9 @@ const MenuMobile: React.FC<MobileProps> = ({ active, handleActive }) => {
       <div className="absolute z-[9999] flex h-[95vh] w-full flex-col items-center justify-center space-y-5 bg-[#161215f3]">
         {pages.map((p, i) => (
           <Link
+            onClick={() => setActive(false)}
             className="text-xl text-white"
-            href={`#${p.name.toLowerCase()}`}
+            href={`${p.href.toLowerCase()}`}
           >
             {p.name}
           </Link>

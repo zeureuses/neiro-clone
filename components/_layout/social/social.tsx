@@ -56,7 +56,7 @@ const Social = () => {
           <div className="social__text">JOIN US NOW</div>
           <a
             href="https://www.dextools.io/app/en/ether/pair-explorer/0x3885fbe4cd8aed7b7e9625923927fa1ce30662a3?t=1722128195769"
-            className="social__button button button--big"
+            className="0.5 social__button button button--big transition-all hover:scale-105"
           >
             <span>Buy Now</span>
             <svg

@@ -9,9 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        customBlack: "#161010",
+        bgBlue: "#225df5",
         customLightBlue: "#225df5",
         customYellow: "#F2D732",
+      },
+      backgroundImage: {
+        gradient:
+          "linear-gradient(270deg, #0b2873 0%, #225df5 46.25%, #0d2d7f 99.2%)",
       },
     },
   },

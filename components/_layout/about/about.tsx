@@ -41,6 +41,7 @@ const About = () => {
       data-watch="navigator"
       className="page__what what _watcher-view"
       data-watch-threshold="0.67"
+      id="about"
     >
       <div
         data-watch-threshold="0.1"

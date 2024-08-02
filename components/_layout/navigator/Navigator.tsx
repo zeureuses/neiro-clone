@@ -37,6 +37,7 @@ const Navigator = () => {
       data-watch="navigator"
       className="page__how how"
       data-watch-threshold="0.24"
+      id="how-to-buy"
     >
       <div
         data-watch-threshold="0.8"

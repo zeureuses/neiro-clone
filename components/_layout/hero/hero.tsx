@@ -59,7 +59,7 @@ const Hero = () => {
                   initial="hidden"
                   animate="visible"
                   variants={fadeInOutVariants}
-                  transition={{ duration: 0.5, ease, delay: 0.5 }} // Delay to start after label
+                  transition={{ duration: 0.5, ease, delay: 0.5 }}
                 >
                   NEIRO
                 </motion.span>
@@ -68,7 +68,7 @@ const Hero = () => {
                 initial="hidden"
                 animate="visible"
                 variants={fadeInOutVariants}
-                transition={{ duration: 0.5, ease, delay: 1.0 }} // Delay to start after title
+                transition={{ duration: 0.5, ease, delay: 1.0 }}
                 className="top-hero__text"
               >
                 The sister of the OG $DOGE, Kabosu, here to make history on the
@@ -77,7 +77,7 @@ const Hero = () => {
               <div className="top-hero__buttons">
                 <a
                   href="https://app.uniswap.org/swap?outputCurrency=0xee2a03aa6dacf51c18679c516ad5283d8e7c2637"
-                  className="top-hero__button button button--big"
+                  className="0.5 top-hero__button button button--big transition-all hover:scale-105"
                 >
                   <span>Buy Now</span>
                   <svg
@@ -95,7 +95,7 @@ const Hero = () => {
                 </a>
                 <a
                   href="https://www.dextools.io/app/en/ether/pair-explorer/0x3885fbe4cd8aed7b7e9625923927fa1ce30662a3?t=1722287773282"
-                  className="top-hero__button button button--big button--white"
+                  className="0.5 top-hero__button button button--big button--white transition-all hover:scale-105"
                 >
                   <span>Chart</span>
                 </a>
@@ -119,7 +119,13 @@ const Hero = () => {
                 href="https://t.me/neiro_ethereum"
                 className="bottom-hero__item"
               >
-                <Image src={Telegram} alt="Icon" width={100} height={100} />
+                <Image
+                  className="0.5 transition-all hover:scale-105"
+                  src={Telegram}
+                  alt="Icon"
+                  width={100}
+                  height={100}
+                />
               </motion.a>
               <motion.a
                 initial="hidden"
@@ -129,7 +135,13 @@ const Hero = () => {
                 href="https://x.com/neiro_ethereum"
                 className="bottom-hero__item"
               >
-                <Image src={Twitter} alt="Icon" width={100} height={100} />
+                <Image
+                  className="0.5 transition-all hover:scale-105"
+                  src={Twitter}
+                  alt="Icon"
+                  width={100}
+                  height={100}
+                />
               </motion.a>
               <motion.a
                 initial="hidden"
@@ -139,7 +151,13 @@ const Hero = () => {
                 href="https://app.uniswap.org/swap?outputCurrency=0xee2a03aa6dacf51c18679c516ad5283d8e7c2637"
                 className="bottom-hero__item"
               >
-                <Image src={Uniswap} alt="Icon" width={100} height={100} />
+                <Image
+                  className="0.5 transition-all hover:scale-105"
+                  src={Uniswap}
+                  alt="Icon"
+                  width={100}
+                  height={100}
+                />
               </motion.a>
               <motion.a
                 initial="hidden"
@@ -149,7 +167,13 @@ const Hero = () => {
                 href="https://www.dextools.io/app/en/ether/pair-explorer/0x3885fbe4cd8aed7b7e9625923927fa1ce30662a3?t=1722287773282"
                 className="bottom-hero__item"
               >
-                <Image src={Dextool} alt="Icon" width={100} height={100} />
+                <Image
+                  className="0.5 transition-all hover:scale-105"
+                  src={Dextool}
+                  alt="Icon"
+                  width={100}
+                  height={100}
+                />
               </motion.a>
               <motion.a
                 initial="hidden"
@@ -159,7 +183,13 @@ const Hero = () => {
                 href="https://dexscreener.com/ethereum/0x3885fbe4cd8aed7b7e9625923927fa1ce30662a3"
                 className="bottom-hero__item"
               >
-                <Image src={Dexscreener} alt="Icon" width={100} height={100} />
+                <Image
+                  className="0.5 transition-all hover:scale-105"
+                  src={Dexscreener}
+                  alt="Icon"
+                  width={100}
+                  height={100}
+                />
               </motion.a>
             </div>
           </div>

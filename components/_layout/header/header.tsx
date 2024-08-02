@@ -12,19 +12,17 @@ const Header: React.FC = () => {
   const [active, setActive] = React.useState(false);
   const controls = useAnimation();
 
-  // Animation variants
   const slideFromTop = {
     hidden: {
       opacity: 0,
-      y: "-100%", // Move it out of view from the top
+      y: "-100%",
     },
     visible: {
       opacity: 1,
-      y: 0, // Move it into view
+      y: 0,
     },
   };
 
-  // Scroll effect for navbar background
   React.useEffect(() => {
     const changeBackgroundColor = () => {
       if (window.scrollY >= 100) {
@@ -41,12 +39,10 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  // Toggle menu active state
   const handleActive = () => {
     setActive((prev) => !prev);
   };
 
-  // Control animation based on active state
   React.useEffect(() => {
     if (active) {
       controls.start("visible");
@@ -88,7 +84,11 @@ const Header: React.FC = () => {
                   transition={{ duration: 0.5 }} // Adjust duration as needed
                   className={`absolute inset-0 z-[8999] h-full w-full ${active ? "block" : "hidden"}`}
                 >
-                  <MenuMobile active={active} handleActive={handleActive} />
+                  <MenuMobile
+                    active={active}
+                    setActive={setActive}
+                    handleActive={handleActive}
+                  />
                 </motion.div>
 
                 <nav className={`menu__body`}>
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
                     </li>
                     <li className="menu__item">
                       <a
-                        href="#"
+                        href="#about"
                         data-goto-header=""
                         data-goto=".what"
                         className="menu__link"
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
                     </li>
                     <li className="menu__item">
                       <a
-                        href="#"
+                        href="#how-to-buy"
                         data-goto-header=""
                         data-goto=".how"
                         className="menu__link"
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                     </li>
                     <li className="menu__item">
                       <a
-                        href="#"
+                        href="#tokenomics"
                         data-goto-header=""
                         data-goto=".tokenomics"
                         className="menu__link"
@@ -138,7 +138,7 @@ const Header: React.FC = () => {
               <div className="header__buttons" data-da=".menu__body, 991.98">
                 <a
                   href="https://app.uniswap.org/swap?outputCurrency=0xee2a03aa6dacf51c18679c516ad5283d8e7c2637"
-                  className="header__button button"
+                  className="header__button button 0.5 transition-all hover:scale-105"
                 >
                   <span>BUY NOW</span>
                 </a>

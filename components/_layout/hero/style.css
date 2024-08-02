@@ -195,7 +195,7 @@
 }
 
 .top-hero__lable {
-  color: #fff;
+  color: var(--textWhite);
   font-style: normal;
   font-weight: 700;
 }
@@ -215,7 +215,7 @@
 .top-hero__title span {
   display: inline-block;
   position: relative;
-  color: #fff;
+  color: var(--textWhite);
   line-height: 0.8;
   transform-origin: left;
 }
@@ -243,7 +243,7 @@
 
 .top-hero__text {
   max-width: 31.625rem;
-  color: #fff;
+  color: var(--textWhite);
   line-height: 1.4;
 }
 
@@ -260,11 +260,9 @@
   flex-shrink: 0;
   padding: 0.75rem 1.5rem;
   border-radius: 1.125rem;
-  border: 0.1875rem solid #000;
-  background-color: #225df5;
-  box-shadow:
-    -7px -7px 4px rgba(0, 0, 0, 0.45) inset,
-    4.505px 4.505px 0 1.502px #000;
+  border: 0.1875rem solid var(--borderBlack);
+  background-color: var(--bgBlue) !important;
+  box-shadow: var(--shadow);
   transition:
     box-shadow 0.2s ease,
     transform 0.2s ease;
@@ -280,10 +278,8 @@
   flex-shrink: 0;
   padding: 0.75rem 1.5rem;
   border-radius: 1.125rem;
-  border: 0.1875rem solid #000;
-  box-shadow:
-    -7px -7px 4px 0 rgba(0, 0, 0, 0.45) inset,
-    4.505px 4.505px 0 1.502px #000;
+  border: 0.1875rem solid var(--borderBlack);
+  box-shadow: var(--shadow);
   transition:
     box-shadow 0.2s ease,
     transform 0.2s ease;
@@ -293,13 +289,9 @@
   column-gap: 1rem;
 }
 
-.btn-buy {
-  background-color: #225df5;
-}
-
 .btn-chart {
-  color: black;
-  background-color: white;
+  color: var(--textBlack);
+  background-color: var(--bgBlue) !important;
 }
 
 .bottom-hero {
@@ -308,8 +300,8 @@
   width: 110%;
   rotate: -3deg;
   transform-origin: left;
-  border: 0.5rem solid #000;
-  background: linear-gradient(270deg, #0b2873 0, #225df5 46.25%, #0d2d7f 99.2%);
+  border: 0.5rem solid var(--borderBlack);
+  background: var(--bgGradient);
   box-shadow: 0 9px 0 0 #000;
 }
 
@@ -328,7 +320,7 @@
 .button span {
   position: relative;
   z-index: 2;
-  color: #fff;
+  color: var(--textWhite);
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.4;
@@ -336,11 +328,11 @@
 }
 
 .button--white {
-  background-color: #fff;
+  background-color: var(--textWhite);
 }
 
 .button--white span {
-  color: #000;
+  color: var(--textBlack);
 }
 
 @keyframes opacity {

@@ -43,6 +43,7 @@ const Tokenomics = () => {
       data-watch="navigator"
       className="page__tokenomics tokenomics"
       data-watch-threshold="0.35"
+      id="tokenomics"
     >
       <div
         data-watch-threshold="0.8"

@@ -1,8 +1,8 @@
 .footer {
   position: relative;
   z-index: 7;
-  border-top: 0.5rem solid #000;
-  background: linear-gradient(270deg, #0b2873 0, #225df5 46.25%, #0d2d7f 99.2%);
+  border-top: 0.5rem solid var(--borderBlack);
+  background: var(--bgGradient);
   box-shadow: 0 9px 0 0 #000;
 }
 
